@@ -4,7 +4,7 @@ In order to keep the focus of this repository on the pipeline features, some rep
 
 #### Original SWISH: https://github.com/JacksonKary/SWISH
 
-## This project uses a few important systems programming topics:
+## This project uses a number of important systems programming topics:
 
 - Text file input and parsing
 - Creating pipes with the pipe() system call
