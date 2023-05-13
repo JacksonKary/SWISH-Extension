@@ -11,7 +11,7 @@ In order to keep the focus of this repository on the pipeline features, some rep
 - Using pipe file descriptors to coordinate among several processes
 - Executing program pipelines using pipe() and dup2() along with the usual fork() and exec()
 
-### All of the following are examples of valid command pipelines that this shell handles:
+## All of the following are examples of valid command pipelines that this shell handles:
 <ul>
   <li> <code>cat file.txt | wc -l</code>
   <li> <code>cat < file.txt | wc -l</code>
