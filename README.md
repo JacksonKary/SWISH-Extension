@@ -33,6 +33,13 @@ For example, consider the pipeline <code>cat gatsby.txt | tr -cs A-Za-z \n | tr 
   <li>  <code>string_vector.h</code> : Header file for a vector data structure to store strings.
   <li>  <code>string_vector.c</code> : Implementation of the string vector data structure - includes more functions than the original SWISH.
   <li>  <code>Makefile</code> : Build file to compile and run test cases.
+  <li>  <code>test_cases</code> Folder, which contains:
+  <ul>
+    <li>  <code>input</code> : Input files used in automated testing cases.
+    <li>  <code>resources</code> : More input files.
+    <li>  <code>output</code> : Expected output.
+  </ul>
+  <li>  <code>testius</code> : Python script that runs the tests.
 </ul>
 
 ## Running Tests
@@ -43,7 +50,7 @@ A Makefile is provided as part of this project. This file supports the following
   <li>  <code>make</code> : Compile all code, produce an executable program.
   <li>  <code>make clean</code> : Remove all compiled items. Useful if you want to recompile everything from scratch.
   <li>  <code>make clean-tests</code> : Remove all files produced during execution of the tests.
-  <li>  <code>make test</code> : Run all test cases
-  <li>  <code>make test testnum=5</code> : Run test case #5 only
+  <li>  <code>make test</code> : Run all test cases.
+  <li>  <code>make test testnum=5</code> : Run test case #5 only.
 </ul>
 
