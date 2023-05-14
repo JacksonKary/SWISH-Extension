@@ -1,0 +1,12 @@
+@> cat < test_cases/resources/numbers.txt | sort -rn | tail -n 10
+44
+38
+36
+34
+26
+7
+7
+7
+3
+3
+@> exit

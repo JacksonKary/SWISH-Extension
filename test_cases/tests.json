@@ -1,0 +1,189 @@
+{
+    "name": "Swish Shell Pipeline Tests",
+    "tests": [
+        {
+            "name": "Two-Element Pipeline",
+            "description": "Runs a simple pipeline consisting of two commands where output of the first command must be provided as input to second command",
+            "command": "./swish",
+            "prompt": "@>",
+            "input_file": "test_cases/input/two_elem.txt",
+            "output_file": "test_cases/output/two_elem.txt",
+            "use_valgrind": true
+        },
+        {
+            "name": "Two-Element Pipeline With Input Redirection",
+            "description": "Runs a simple pipeline consisting of two commands where first command has input redirected from a file",
+            "command": "./swish",
+            "prompt": "@>",
+            "input_file": "test_cases/input/two_elem_input.txt",
+            "output_file": "test_cases/output/two_elem_input.txt",
+            "use_valgrind": true
+        },
+        {
+            "type": "sequence",
+            "name": "Two-Element Pipeline With Output Redirection",
+            "description": "Runs a pipeline consisting of two programs. The last program has its output redirected to a file.",
+            "tests": [
+                {
+                    "name": "Execute Pipeline",
+                    "description": "Run the 2-program pipeline in the swish shell",
+                    "command": "./swish",
+                    "prompt": "@>",
+                    "input_file": "test_cases/input/two_elem_output.txt",
+                    "output_file": "test_cases/output/two_elem_output_run.txt",
+                    "use_valgrind": true,
+                    "points": 0
+                },
+                {
+                    "name": "Check Output File",
+                    "description": "Display contents of redirection target to check its correctness",
+                    "command": "cat out.txt",
+                    "output_file": "test_cases/output/two_elem_output_check.txt"
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "target": "Execute Pipeline",
+                        "type": "run"
+                    }
+                ],
+                [
+                    {
+                        "target": "Check Output File",
+                        "type": "run"
+                    }
+                ]
+            ]
+        },
+        {
+            "type": "sequence",
+            "name": "Two-Element Pipeline With Input and Output Redirection",
+            "description": "Runs a pipeline consisting of two programs. The first program has its input redirected from a file and the last program has its output redirected to a file.",
+            "tests": [
+                {
+                    "name": "Execute Pipeline",
+                    "description": "Run the 2-program pipeline in the swish shell",
+                    "command": "./swish",
+                    "prompt": "@>",
+                    "input_file": "test_cases/input/two_elem_input_output.txt",
+                    "output_file": "test_cases/output/two_elem_input_output_run.txt",
+                    "use_valgrind": true,
+                    "points": 0
+                },
+                {
+                    "name": "Check Output File",
+                    "description": "Display contents of redirection target to check its correctness",
+                    "command": "cat out.txt",
+                    "output_file": "test_cases/output/two_elem_input_output_check.txt"
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "target": "Execute Pipeline",
+                        "type": "run"
+                    }
+                ],
+                [
+                    {
+                        "target": "Check Output File",
+                        "type": "run"
+                    }
+                ]
+            ]
+        },
+        {
+            "name": "Three-Element Pipeline",
+            "description": "Runs a pipeline consisting of three programs.",
+            "command": "./swish",
+            "prompt": "@>",
+            "input_file": "test_cases/input/three_elem.txt",
+            "output_file": "test_cases/output/three_elem.txt",
+            "use_valgrind": true
+        },
+        {
+            "name": "Three-Element Pipeline With Input Redirection",
+            "description": "Runs a pipeline consisting of three programs. The first program has its input redirected from a file.",
+            "command": "./swish",
+            "prompt": "@>",
+            "input_file": "test_cases/input/three_elem_input.txt",
+            "output_file": "test_cases/output/three_elem_input.txt",
+            "use_valgrind": true
+        },
+        {
+            "type": "sequence",
+            "name": "Three-Element Pipeline With Output Redirection",
+            "description": "Runs a pipeline consisting of three programs. The last program has its output redirected to a file.",
+            "tests": [
+                {
+                    "name": "Execute Pipeline",
+                    "description": "Run the 3-program pipeline in the swish shell",
+                    "command": "./swish",
+                    "prompt": "@>",
+                    "input_file": "test_cases/input/three_elem_output.txt",
+                    "output_file": "test_cases/output/three_elem_output_run.txt",
+                    "use_valgrind": true,
+                    "points": 0
+                },
+                {
+                    "name": "Check Output File",
+                    "description": "Display contents of redirection target to check its correctness",
+                    "command": "cat out.txt",
+                    "output_file": "test_cases/output/three_elem_output_check.txt"
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "target": "Execute Pipeline",
+                        "type": "run"
+                    }
+                ],
+                [
+                    {
+                        "target": "Check Output File",
+                        "type": "run"
+                    }
+                ]
+            ]
+        },
+        {
+            "type": "sequence",
+            "name": "Three-Element Pipeline With Input and Output Redirection",
+            "description": "Runs a pipeline consisting of three programs. The first program has its input redirected from a file and the last program has its output redirected to a file.",
+            "tests": [
+                {
+                    "name": "Execute Pipeline",
+                    "description": "Run the 3-program pipeline in the swish shell",
+                    "command": "./swish",
+                    "prompt": "@>",
+                    "input_file": "test_cases/input/three_elem_input_output.txt",
+                    "output_file": "test_cases/output/three_elem_input_output_run.txt",
+                    "use_valgrind": true,
+                    "points": 0
+                },
+                {
+                    "name": "Check Output File",
+                    "description": "Display contents of output redirection target to check its correctness",
+                    "command": "cat out.txt",
+                    "output_file": "test_cases/output/three_elem_input_output_check.txt"
+                }
+            ],
+            "steps": [
+                [
+                    {
+                        "target": "Execute Pipeline",
+                        "type": "run"
+                    }
+                ],
+                [
+                    {
+                        "target": "Check Output File",
+                        "type": "run"
+                    }
+                ]
+            ]
+        }
+    ]
+}

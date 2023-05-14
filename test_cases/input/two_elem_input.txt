@@ -1,0 +1,2 @@
+@> cat < test_cases/resources/numbers.txt | wc -l
+@> exit
